@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Smooth Scrolling</title>
+		<link rel="stylesheet" href="css/smooth-scrolling.css">
+	</head>
+	<body>
+	
+		<script src="js/jquery.js"></script>
+		<script>
+		$(function() {
+			$("a[href^='#']").click(function(e){     
+				$("body, html").stop().animate({scrollTop:$(this.hash).offset().top - 50}, 1000);
+				e.preventDefault();
+			});
+		});
+		</script>
+		
+		<nav>
+			<a href="#link1">Link1</a>
+			<a href="#link2">Link2</a>
+			<a href="#link3">Link3</a>
+			<a href="#link4">Link4</a>
+			<a href="#link5">Link5</a>
+			<a href="#link6">Link6</a>
+			<a href="#link7">Link7</a>
+		</nav>
+
+		<div class="content">
+			<div id="link1">Link1</div>
+			<div id="link2">Link2</div>
+			<div id="link3">Link3</div>
+			<div id="link4">Link4</div>
+			<div id="link5">Link5</div>
+			<div id="link6">Link6</div>
+			<div id="link7">Link7</div>
+		</div>
+		
+	</body>
+</html>

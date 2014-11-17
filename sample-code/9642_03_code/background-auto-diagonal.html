@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="js/jquery.js"></script>
+		<style>
+		body {background:url(images/background.jpg) top center fixed;}
+		</style>
+		
+		<script>
+		$(function() {
+			var xPos = 0;
+			var yPos = 0;
+			var timer = setInterval(start, 50);
+		
+			function start() {
+				xPos = xPos - 5;
+				yPos = yPos - 5;
+				$("body").css({ backgroundPosition: xPos + "px " +  yPos + "px" });
+				console.log(yPos);
+			}
+		});
+		</script>
+	</head>
+	<body></body>
+</html>

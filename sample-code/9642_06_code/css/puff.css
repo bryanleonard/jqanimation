@@ -1,0 +1,4 @@
+#confirm { display:block; width:400px; height:120px; position:absolute; background:#EEE; border:1px solid #ccc; font:normal 13px sans-serif; }
+#confirm img { margin:20px 20px 0 20px; float:left; }
+#confirm p { margin:40px 0 0 0; }
+#confirm button { width:68px; margin:20px 10px 0 0; float:right; }

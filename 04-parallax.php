@@ -16,10 +16,10 @@
 	left:0;
 	top:0;
 }
-#background { background:url(img/background.png) repeat-x 0 bottom; }
-#midground { background:url(img/midground.png) repeat-x 0 bottom; }
-#foreground { background:url(img/ground.png) repeat-x 0 bottom; }
-#ground { background:url(img/foreground.png) repeat-x 0 bottom; }	
+#background { background:url(sample-code/9642_03_code/images/background.png) repeat-x 0 bottom; }
+#midground { background:url(sample-code/9642_03_code/images/midground.png) repeat-x 0 bottom; }
+#foreground { background:url(sample-code/9642_03_code/images/foreground.png) repeat-x 0 bottom; }
+#ground { background:url(sample-code/9642_03_code/images/ground.png) repeat-x 0 bottom; }	
 
 	</style>
 </head>

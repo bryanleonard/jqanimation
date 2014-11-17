@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Navigation Animation</title>
+		<link rel="stylesheet" href="css/navigation-animation1.css">
+	</head>
+	<body>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+	
+		<script>
+		$(function() {
+			$("nav a").hover(function(){
+				$(this).stop().animate({backgroundColor:"#F0F"}, 300)
+			}, function(){
+				$(this).stop().animate({backgroundColor:"#DDD"}, 300)
+			});
+		});
+		</script>
+		
+		<nav>
+			<a href="#">Link1</a>
+			<a href="#">Link2</a>
+			<a href="#">Link3</a>
+			<a href="#">Link4</a>
+			<a href="#">Link5</a>
+			<a href="#">Link6</a>
+			<a href="#">Link7</a>
+		</nav>
+
+	</body>
+</html>

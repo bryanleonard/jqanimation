@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Image Rotator | Features: Pause on hover & controls</title>
+		<link rel="stylesheet" href="css/image-rotator.css">
+	</head>
+	<body>
+		<script src="js/jquery.js"></script>
+		<script>
+		$(function() {
+			var image = $("#slider img");
+			var numSlides = image.length;
+			var activeSlide = 0;
+			var speed = 2000;
+			var fade = 1000;
+			var pause;
+			var timer = setInterval(rotate, speed);
+			image.eq(activeSlide).show();
+		
+			$("#slider, #prev, #next").hover(function() {
+				clearInterval(timer);
+				pause = true;
+			}, function() {
+				timer = setInterval(rotate, speed);
+				pause = false;
+			});				
+		
+			$("#prev").click(function(event) {
+				event.preventDefault();
+				activeSlide--;
+				rotate();
+			});
+		
+			$("#next").click(function(event) {
+				event.preventDefault();
+				activeSlide++;
+				rotate();
+			});
+		
+			function rotate() {
+				if (!pause == true) {
+					activeSlide++;
+				}
+		
+				if (activeSlide == numSlides) {
+					activeSlide = 0;
+				}
+		
+				if (activeSlide < 0) {
+					activeSlide = numSlides - 1;
+				}
+		
+				image.not(activeSlide).fadeOut(fade);
+				image.eq(activeSlide).fadeIn(fade);
+			}
+		});
+		</script>
+		
+		<div class="container">
+			<div id="slider">
+				<img src="http://placekitten.com/200/200?image=1">
+				<img src="http://placekitten.com/200/200?image=2">
+				<img src="http://placekitten.com/200/200?image=3">
+				<img src="http://placekitten.com/200/200?image=4">
+				<img src="http://placekitten.com/200/200?image=5">
+				<img src="http://placekitten.com/200/200?image=6">
+				<img src="http://placekitten.com/200/200?image=7">
+			</div>
+			<a id="prev" href="#">prev</a>
+			<a id="next" href="#">next</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+form {float:left; margin:5px;}
+input {display:block; width:200px; padding:10px; border-radius:3px; background:#F5F5F5; border:1px solid #D5D5D5;}
+input[type=submit] {width:auto; border:0; color:#FFF; text-transform:uppercase;}
+input:focus {outline:0;}
+
+#form1 input.hover {border:1px solid #FF7F7F;}
+#form1 input.focus {background:#FFD8D8; border:1px solid #FF7F7F;}
+#form1 input[type=submit] {background:#FF6B6B; border:1px solid #FF3A3A;}
+
+#form2 input.hover {border:1px solid #7FA1D1;}
+#form2 input.focus {background:#E6F0FF; border:1px solid #7FA1D1;}
+#form2 input[type=submit] {background:#8FACD7; border:1px solid #638CC7;}
+#form2 input.error {border:1px dashed #F00;}

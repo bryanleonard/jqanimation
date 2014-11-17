@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Form Animation</title>
+		<link rel="stylesheet" href="css/form-animation.css">
+	</head>
+	<body>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script>
+		$(function() {
+			$("input").hover(function() {
+				$(this).addClass("hover", 500); 
+			}, function() {
+				$(this).removeClass("hover", 500);
+			});
+			
+			$("input").focus(function() {
+				$(this).addClass("focus", 500);
+			});
+			
+			$("input").blur(function() {
+				$(this).removeClass("focus", 500);
+			});
+			
+			$("#form1 input[type=submit]").click(function(e) {
+				e.preventDefault();
+				var msg_error = "";
+				$("#form1 input[type=text]").each(function() {
+					if ($(this).val() == "") {
+						msg_error += $(this).attr("placeholder") + " can't be left blank.\n";
+					}
+				});
+				if (msg_error) {alert(msg_error);}
+				else {alert("Form submitted successfully!");}
+			});
+			
+			$("#form2 input[type=submit]").click(function(e) {
+				e.preventDefault();
+				$("#form2 input[type=text]").each(function() {
+					if ($(this).val() == "") {
+						$(this).addClass("error");
+					} else {
+						$(this).removeClass("error");
+					}
+				});
+			});
+		
+			$("form").effect("bounce", { direction:"left", easing:"linear"}, 500);
+		});
+		</script>
+		
+		<form id="form1">
+			<input type="text" placeholder="First Name">
+			<input type="text" placeholder="Last Name">
+			<input type="text" placeholder="Email Address">
+			<input type="text" placeholder="Phone Number">
+			<input type="submit" value="Submit">
+		</form>
+		
+		<form id="form2">
+			<input type="text" placeholder="First Name">
+			<input type="text" placeholder="Last Name">
+			<input type="text" placeholder="Email Address">
+			<input type="text" placeholder="Phone Number">
+			<input type="submit" value="Submit">
+		</form>
+
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script>  
+		$(document).ready(function() {
+			changeBG();
+		});
+		
+		function changeBG() {
+			var speed = 1500;
+			$("body")
+				.animate({backgroundColor:"#D68A85"}, speed)  //red
+				.animate({backgroundColor:"#E7912D"}, speed)  //orange
+				.animate({backgroundColor:"#CECC33"}, speed)  //yellow
+				.animate({backgroundColor:"#6FCD94"}, speed)  //green
+				.animate({backgroundColor:"#3AB6F1"}, speed)  //blue
+				.animate({backgroundColor:"#8684D8"}, speed)  //purple
+				.animate({backgroundColor:"#DD67AE"}, speed); //pink
+			changeBG();
+		}
+		</script>	
+	</head>
+	<body></body>
+</html>

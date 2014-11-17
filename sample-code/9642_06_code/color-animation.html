@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery UI Color Animations</title>
+		<link rel="stylesheet" href="css/color-animation.css">
+	</head>
+	<body>
+    	<input><button id="search">Search</button>
+		<script src="js/jquery.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script>
+			$(function(){	
+				$("#search").click(function(e) {
+					e.preventDefault();
+					
+					var input = $(this).prev();
+					
+					if (input.val() == "") {
+						input.animate({ backgroundColor: "#f78080", borderColor: "#a72b2e" }, 1200);
+					};
+				});
+			});
+		</script>
+	</body>
+</html>
