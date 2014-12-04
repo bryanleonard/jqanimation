@@ -16,10 +16,10 @@
 	left:0;
 	top:0;
 }
-#background { background:url(sample-code/9642_03_code/images/background.png) repeat-x 0 bottom; }
-#midground { background:url(sample-code/9642_03_code/images/midground.png) repeat-x 0 bottom; }
-#foreground { background:url(sample-code/9642_03_code/images/foreground.png) repeat-x 0 bottom; }
-#ground { background:url(sample-code/9642_03_code/images/ground.png) repeat-x 0 bottom; }	
+#background { background:url(sample-code/9642_03_code/images/background.png) repeat-x 0 0; }
+#midground { background:url(sample-code/9642_03_code/images/midground.png) repeat-x 0 0; }
+#foreground { background:url(sample-code/9642_03_code/images/foreground.png) repeat-x 0 0; }
+#ground { background:url(sample-code/9642_03_code/images/ground.png) repeat-x 0 100%; }
 
 	</style>
 </head>
@@ -58,15 +58,24 @@
 
 <script>
 
+var g = $('#ground');
 var bg = $("#background");
 var mg = $("#midground");
 var fg = $("#foreground");
 $(document).keydown(function(e) {
-if (e.which === 39) { //right arrow key
-	bg.animate({ backgroundPosition: "-=1px"}, 0, "linear" );
-	mg.animate({ backgroundPosition: "-=10px" }, 0, "linear" );
-	fg.animate({ backgroundPosition: "-=20px" }, 0, "linear" );
-}
+
+console.log(e);
+
+	if (e.which === 39) { //right arrow key
+		// g.animate({ backgroundPosition: "-=1px"}, 0, "linear");
+		bg.animate({ backgroundPosition: "-+=1px"}, 0, "linear" );
+		mg.animate({ backgroundPosition: "-=10px" }, 0, "linear" );
+		fg.animate({ backgroundPosition: "-=20px" }, 0, "linear" );
+	}
+
+	if (e.which === 37) { // left arrow key
+
+	}
 });
 
 //page 45
