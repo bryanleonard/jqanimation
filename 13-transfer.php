@@ -11,7 +11,29 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+#install {
+width:417px;
+height:339px;
+position:relative;
+background:url(sample-code/9642_06_code/img/install.jpg) no-repeat 0 0;
+}
+#firefox {
+width:124px;
+height:121px;
+position:absolute;
+left:34px;
+top:132px;
+background:url(sample-code/9642_06_code/img/firefox.png) no-repeat 0 0;
+}
+#apps {
+width:54px;
+height:52px;
+position:absolute;
+right:58px;
+top:172px;
+background:url(sample-code/9642_06_code/img/apps.png) no-repeat 0 0;
+}
+.ui-effect-transfer { border:2px solid #336699; }		
 
 	</style>
 </head>
@@ -25,10 +47,17 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Transfer</h1>
 	</hgroup>
 
 
+<div id="install">
+<div id="firefox"></div>
+<div id="apps"></div>
+</div>
+<p>To install the application, drag its icon over to the apps
+folder icon.</p>
+<button id="show">Show me</button>
 
 			</div>
 		</div>
@@ -47,7 +76,12 @@
 
 <script>
 
-
+$("#show").click(function() {
+	$("#firefox").effect("transfer", {
+	to: "#apps",
+	className: "ui-effect-transfer"
+	}, 1000);
+});
 
 
 </script>

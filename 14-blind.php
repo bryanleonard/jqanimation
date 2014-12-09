@@ -11,7 +11,22 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+#window {
+	width:464px;
+	height:429px;
+	position:relative;
+	cursor:pointer;
+	background:url(sample-code/9642_06_code/img/window.jpg) no-repeat 0 0;
+}
+#blind {
+	display:none;
+	width:332px;
+	height:245px;
+	position:absolute;
+	left:64px;
+	top:113px;
+	background:url(sample-code/9642_06_code/img/blind.png) no-repeat 0 100%;
+}	
 
 	</style>
 </head>
@@ -25,11 +40,12 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Blind (dog)</h1>
 	</hgroup>
 
-
-
+<div id="window">
+	<div id="blind"></div>
+</div>
 			</div>
 		</div>
 
@@ -47,6 +63,9 @@
 
 <script>
 
+$('#window').on('click', function() {
+	$('#blind').toggle('blind');
+})
 
 
 

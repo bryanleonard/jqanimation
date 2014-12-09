@@ -10,8 +10,38 @@
 
 	<style>
 
-/* sample-code/9642_06_code/img/ */		
-		
+/* sample-code/9642_06_code/img/ */	
+
+body {
+	background: url('img/bg.jpg');
+}	
+#window {
+	width:670px;
+	height:290px;
+	margin: 0 auto;
+	position:relative;
+	cursor:pointer;
+	background:url(img/flip.png) no-repeat 0 0;
+}
+#endless {
+	display:block;
+	width:670px;
+	height:290px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:url(img/endless.png) no-repeat 0 100%;
+}	
+
+#loop {
+	display:none;
+	width:670px;
+	height:290px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:url(img/loop.png) no-repeat 0 100%;
+}
 
 	</style>
 </head>
@@ -25,11 +55,13 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header" style='color: white;'>EL.IO</h1>
 	</hgroup>
 
-
-
+<div id="window">
+	<div id="endless"></div>
+	<div id="loop"></div>
+</div>
 			</div>
 		</div>
 
@@ -47,6 +79,10 @@
 
 <script>
 
+$('#window').on('click', function() {
+	$('#loop').effect('clip');
+	// $('#loop').toggle();
+})
 
 
 

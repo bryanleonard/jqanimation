@@ -11,7 +11,26 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+#todo {
+width:208px;
+font:normal 13px sans-serif;
+}
+#todo ul {
+padding:0;
+margin-bottom:30px;
+}
+#todo li { list-style-type:none;}
+#todo label {
+display:block;
+border-bottom:1px dotted #000;
+ padding-bottom: 4px;
+}
+li input {
+position:relative;
+top:0px;
+
+}
+input { margin-right:10px; }		
 
 	</style>
 </head>
@@ -25,10 +44,19 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Higlight</h1>
 	</hgroup>
 
-
+<div id="todo">
+<h2>Todo List</h2>
+<ul>
+<li><label><input type="checkbox">Item 1</label></li>
+<li><label><input type="checkbox">Item 2</label></li>
+<li><label><input type="checkbox">Item 3</label></li>
+</ul>
+<input type="text" id="new">
+<button id="add">Add</button>
+</div>
 
 			</div>
 		</div>
@@ -47,7 +75,19 @@
 
 <script>
 
+$("#add").click(function() {
+	var newItem = $("#new"),
+	text = newItem.val();
 
+	if (text) {
+		var li = $("<li>"),
+		label = $("<label>").html("<input type=\"checkbox\">" + text).appendTo(li);
+		li.appendTo("#todo ul").effect("highlight", 2000);
+		newItem.val("");
+	}
+	// prevent the form from submitting
+	return false;
+});
 
 
 </script>

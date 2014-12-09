@@ -11,7 +11,24 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+form {
+width:235px;
+min-height: 195px;
+padding:20px;
+margin:auto;
+border:1px solid #000;
+font:normal 13px sans-serif;
+}
+h2 {
+font-size:14px;
+margin-top:0;
+}
+input {
+display:block;
+margin-bottom:10px;
+border:1px solid #000;
+height: 20px !important;
+}
 
 	</style>
 </head>
@@ -25,10 +42,15 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Shake</h1>
 	</hgroup>
 
-
+<form>
+<h2>Login</h2>
+<label>Username:<input id="name" type="text"></label>
+<label>Password:<input id="pass" type="text"></label>
+<input type="submit" id="submit" value="Login">
+</form>
 
 			</div>
 		</div>
@@ -46,7 +68,15 @@
 <!-- <script src="scripts.js"></script> -->
 
 <script>
-
+$("#submit").click(function(e) {
+	e.preventDefault();
+	$("input").each(function(i, val) {
+		if (!$(this).val()) {
+			$(this).css("border", "1px solid red").effect("shake", {
+			distance: 10 }, 300);
+		}
+	});
+});
 
 
 

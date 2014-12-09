@@ -11,7 +11,32 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+#tv {
+	width:300px;
+	height:269px;
+	position:relative;
+	cursor:pointer;
+	background:url(sample-code/9642_06_code/img/tv.png) no-repeat 0 0;
+}
+
+#bg {
+	width:220px;
+	height:180px;
+	position:absolute;
+	left:42px;
+	top:30px;
+	z-index:-2;
+	background-color:#000;
+}
+#static {
+	width:216px;
+	height:178px;
+	position:absolute;
+	left:44px;
+	top:31px;
+	z-index:-1;
+	background:url(sample-code/9642_06_code/img/static.gif) no-repeat 0 0;
+}	
 
 	</style>
 </head>
@@ -25,11 +50,16 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Clip</h1>
 	</hgroup>
 
 
-
+<div id="tv">
+	<div id="bg"></div>
+	<div id="static"></div>
+</div>
+<br>
+<p>Wow that's dumb.</p>
 			</div>
 		</div>
 
@@ -47,7 +77,9 @@
 
 <script>
 
-
+$("#tv").click(function() {
+	$("#static").effect("clip");
+});
 
 
 </script>

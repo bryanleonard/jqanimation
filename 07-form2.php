@@ -49,7 +49,22 @@ button:active {
 .focus {
 	background:#FFD8D8;
 	border:1px solid #FF7F7F;
-}		
+}
+
+
+#form2 input.hover {border:1px solid #7FA1D1;}
+#form2 input.focus {
+	background:#E6F0FF;
+	border:1px solid #7FA1D1;
+}
+#form2 input[type=submit],
+#form2 button {
+	background:#8FACD7;
+	border:1px solid #638CC7;
+}
+#form2 .error {border:1px dashed #F00;}
+
+
 
 	</style>
 </head>
@@ -71,15 +86,17 @@ button:active {
 	<p><input type="text" placeholder="Last Name"></p>
 	<p><input type="text" placeholder="Email Address"></p>
 	<p><input type="text" placeholder="Phone Number"></p>
-	<p><button>Submit</button></p>
+	<p><button id="form1btn">Submit</button></p>
 </form>
 
+<p>&nbsp;</p>
+
 <form id="form2">
-	<input type="text" placeholder="First Name">
-	<input type="text" placeholder="Last Name">
-	<input type="text" placeholder="Email Address">
-	<input type="text" placeholder="Phone Number">
-	<p><button>Submit</button></p>
+	<p><input type="text" placeholder="First Name"></p>
+	<p><input type="text" placeholder="Last Name"></p>
+	<p><input type="text" placeholder="Email Address"></p>
+	<p><input type="text" placeholder="Phone Number"></p>
+	<p><button id="form2btn">Submit</button></p>
 </form>
 
 			</div>
@@ -119,11 +136,11 @@ $('input')
 	);
 
 
-$('button').on('click', function(e) {
+$('#form1btn').on('click', function(e) {
 	e.preventDefault();
 
 	var msg = '';
-	var field = $('input');
+	var field = $('#form1').find('input');
 
 	for (var i=0; i < field.length; i++) {
 	    if( field[i].value == "" ) {
@@ -138,7 +155,25 @@ $('button').on('click', function(e) {
 	}
 
 
-})
+});
+
+$('#form2btn').on('click', function(e) {
+	e.preventDefault();
+
+	var field = $('#form2').find('input');
+
+	for (var i=0; i < field.length; i++) {
+	    if( field[i].value == "" ) {
+	    	// msg += '<li>' + $(field[i]).attr('placeholder') + " can\'t be left blank.</li>";
+	    	$(field[i]).addClass('error');
+	    	// $("form").effect("bounce", { direction:"right", easing:"linear" },500);
+	    } else {
+	    	$(field[i]).removeClass('error')
+	    }
+	};
+
+
+});
 
 // 73
 

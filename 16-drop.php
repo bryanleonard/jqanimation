@@ -11,7 +11,24 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+body { background-color:#3cf; }
+#confirmation {
+	display:none;
+	width:100%;
+	height:60px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:999;
+	background-color:#fff;
+	text-align:center;
+	font:normal 18px sans-serif;
+}
+#confirmation p {
+	margin:0;
+	position:relative;
+	top:18px;
+}	
 
 	</style>
 </head>
@@ -25,10 +42,12 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Drop</h1>
 	</hgroup>
 
-
+<div id="confirmation">
+<p>Your request has been completed!</p>
+</div>
 
 			</div>
 		</div>
@@ -47,8 +66,18 @@
 
 <script>
 
-
-
+$('#confirmation').effect('drop', {
+	mode: 'show',
+	direction: 'up'
+}, function() {
+	var timer = function() {
+		$("#confirmation").effect("drop", { 
+			mode: "hide",
+			direction: "up"});
+	}
+	setTimeout(timer, 3000);
+});
+// 104
 
 </script>
 

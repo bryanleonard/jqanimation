@@ -11,7 +11,25 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+	#confirm {
+		display:block;
+		width:400px;
+		height:120px;
+		position:absolute;
+		border:1px solid #ccc;
+		background:#EEE;
+		font:normal 13px sans-serif;
+	}
+	#confirm img {
+		margin:20px 20px 0 20px;
+		float:left;
+	}
+	#confirm p { margin:40px 0 0 0; }
+	#confirm button {
+		width:68px;
+		margin:20px 10px 0 0;
+		float:right;
+	}	
 
 	</style>
 </head>
@@ -25,11 +43,15 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Puff</h1>
 	</hgroup>
 
 
-
+<div id="confirm">
+	<img src="sample-code/9642_06_code/img/help.png" alt="Help Icon">
+	<p>Are you sure you want to do that?</p>
+	<button>Ok</button><button>Cancel</button>
+</div>
 			</div>
 		</div>
 
@@ -47,7 +69,13 @@
 
 <script>
 
-
+$("#confirm").css({
+	left: $(window).width() / 2 - $("#confirm").width() / 2,
+	top: $(window).height() / 2 - $("#confirm").height() / 2
+});
+$("#confirm, button").click(function() {
+	$("#confirm").effect("puff");
+});
 
 
 </script>

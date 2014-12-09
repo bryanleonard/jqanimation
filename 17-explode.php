@@ -25,10 +25,10 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Explode</h1>
 	</hgroup>
 
-
+<img src="sample-code/9642_06_code/img/grenade.jpg" alt="Grenade">
 
 			</div>
 		</div>
@@ -47,7 +47,9 @@
 
 <script>
 
-
+$("img").click(function() {
+	$(this).effect("explode", {pieces: 50});
+});
 
 
 </script>

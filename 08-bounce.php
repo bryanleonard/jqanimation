@@ -9,9 +9,18 @@
 	<!-- <link rel="stylesheet" href="styles.css" type="text/css"> -->
 
 	<style>
-
-/* sample-code/9642_06_code/img/ */		
 		
+#travel {
+	position:absolute;
+	top:100px;
+	/*outline: 1px solid red;*/
+}
+#ball {
+	width:150px;
+	height:150px;
+	cursor:pointer;
+	background:url(sample-code/9642_06_code/img/ball.jpg) no-repeat 0 0;
+}		
 
 	</style>
 </head>
@@ -25,10 +34,12 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Effectuals</h1>
 	</hgroup>
 
-
+<div id="travel">
+	<div id="ball"></div>
+</div>
 
 			</div>
 		</div>
@@ -47,8 +58,14 @@
 
 <script>
 
+//$(selector).effect( effect [,options] [,duration] [,complete] );
 
-
+$('#ball').on('click', function() {
+	$('#travel').animate({
+		left: "+=300px",
+	}, 1500)
+	.find('div').effect("bounce", {times: 4, distance: 100}, 1500);
+})
 
 </script>
 

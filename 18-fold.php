@@ -25,10 +25,11 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Fold</h1>
 	</hgroup>
 
 
+<img src="sample-code/9642_06_code/img/paper.jpg" alt="Pppppaper">
 
 			</div>
 		</div>
@@ -47,8 +48,9 @@
 
 <script>
 
-
-
+$("img").click(function() {
+	$(this).effect("fold", { size: "50%" }, 1000);
+});
 
 </script>
 
