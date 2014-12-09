@@ -47,7 +47,10 @@
 
 <script>
 
-//127
+//130
+//$(elements).animate( properties [,duration] [,easing] [,complete] );
+
+
 
 
 </script>
