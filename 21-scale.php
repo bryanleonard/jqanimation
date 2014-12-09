@@ -11,7 +11,15 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+#containerz {
+	position:relative;
+	float:left;
+	cursor:pointer;
+}
+#containerz img {
+	width:150px;
+	height:150px;
+}		
 
 	</style>
 </head>
@@ -25,9 +33,12 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Scale</h1>
 	</hgroup>
 
+<div id="containerz">
+	<img src="sample-code/9642_06_code/img/europa.jpg" alt="Europa">
+</div>
 
 
 			</div>
@@ -47,7 +58,29 @@
 
 <script>
 
-//127
+$('img').on('click', function() {
+	var img = $(this);
+
+	if( !img.hasClass('full') ) {
+		img.addClass('full').effect('scale', 
+			{
+				percent: 400,
+				scale: 'box',
+				origin: ['top', 'left']
+
+			}
+		)
+	} else {
+		img.removeClass('full').effect('scale', 
+			{
+				percent: 25,
+				scale: 'box',
+				origin: ['top', 'left']
+
+			}
+		)
+	}
+})
 
 
 </script>

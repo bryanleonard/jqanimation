@@ -64,7 +64,7 @@
 <script>
 
 $('#window').on('click', function() {
-	$('#blind').toggle('blind');
+	$('#blind').toggle('blind', {easing: 'easeOutBounce'});
 })
 
 

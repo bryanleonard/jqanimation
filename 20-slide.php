@@ -11,7 +11,24 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+#image {
+	position:relative;
+	float:left;
+}
+#image img { margin-bottom:-5px; }
+#image div {
+	display:none;
+	width:100%;
+	padding:10px 0;
+	position:absolute;
+	left:0;
+	bottom:0;
+	top:auto!important;
+	text-align:center;
+	font-style:italic;
+	background-color:#000;
+	color:#fff;
+}
 
 	</style>
 </head>
@@ -25,9 +42,13 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Slide something or other</h1>
 	</hgroup>
 
+<div id="image">
+	<img src="sample-code/9642_06_code/img/mantis.jpg">
+	<div>Praying Mantis: Insect to the stars.</div>
+</div>
 
 
 			</div>
@@ -49,6 +70,16 @@
 
 // 116
 
+var showIt = function() {
+	$('#image').find('div').stop(true,true).show('slide');
+	console.log('hi');
+};
+
+var hideIt = function() {
+	$('#image').find('div').stop(true, true).hide('slide');
+};
+
+$('#image').hover(showIt, hideIt);
 
 </script>
 

@@ -11,7 +11,10 @@
 	<style>
 
 /* sample-code/9642_06_code/img/ */		
-		
+		.errorz {
+			border: 1px solid red !important;
+			background: #f78080;
+		}
 
 	</style>
 </head>
@@ -25,9 +28,18 @@
 			<div class="col-xs-12">
 	
 	<hgroup>
-		<h1 class="page-header"></h1>
+		<h1 class="page-header">Animating color</h1>
 	</hgroup>
 
+<p><input type="text" id="txt"></p>
+<p><button id='search'>Search</button></p>
+
+<p>&nbsp;</p>
+
+
+
+<p><input type="text" id="txt2"></p>
+<p><button id='search2'>Search</button></p>
 
 
 			</div>
@@ -47,8 +59,28 @@
 
 <script>
 
-//127
 
+$('#search').on('click', function(e) {
+	e.preventDefault();
+
+
+	var input = $('#txt');
+
+	input.animate({
+		backgroundColor: '#f78080',
+		borderColor: '#a72b2e'
+	}, 1200);
+});
+
+
+$('#search2').on('click', function(e) {
+	e.preventDefault();
+
+
+	var input = $('#txt2');
+
+	input.switchClass('','errorz', 1200);
+})
 
 </script>
 
